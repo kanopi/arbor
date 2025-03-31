@@ -31,7 +31,7 @@ props:
       type: string
       title: padding
       description: "Padding"
-      enum: ['default','pt-1 pb-1','pt-3 mb-3','pt-5 pb-5','pt-1','pt-2','pt-3','pt-5','pb-1','pb-2','pb-3','pb-5']
+      enum: ['default','pt-1 pb-1','pt-3 pb-3','pt-5 pb-5','pt-1','pt-2','pt-3','pt-5','pb-1','pb-2','pb-3','pb-5']
     background:
       type: string
       title: background
