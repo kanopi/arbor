@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the theme.
+ */
+
+declare(strict_types=1);
+
+use Drupal\arbor\HookHandler\GinLayoutBuilder;
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function arbor_element_info_alter(array &$info): void {
+  /** @var \Drupal\arbor\HookHandler\GinLayoutBuilder $instance */
+  $instance = \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(GinLayoutBuilder::class);
+  $instance->elementInfoAlter($info);
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function arbor_theme_registry_alter(array &$theme_registry): void {
+  /** @var \Drupal\arbor\HookHandler\GinLayoutBuilder $instance */
+  $instance = \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(GinLayoutBuilder::class);
+  $instance->themeRegistryAlter($theme_registry);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for 'input'.
+ */
+function arbor_theme_suggestions_input_alter(array &$suggestions, array $variables): void {
+  /** @var \Drupal\arbor\HookHandler\GinLayoutBuilder $instance */
+  $instance = \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(GinLayoutBuilder::class);
+  $instance->themeSuggestionsInputAlter($suggestions, $variables);
+}

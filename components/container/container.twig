@@ -1,0 +1,21 @@
+{%
+  set classes = [
+    padding ? padding,
+    margin ? margin,
+    background ? background,
+  ]
+%}
+
+{% set core_classes = [
+    container ? container,
+    width ? width,
+]
+%}
+
+<div{{attributes.addClass(classes)}}>
+<div{{ create_attribute().addClass(core_classes) }}>
+{{ header }}
+{{ description }}
+{{ content }}
+</div>
+</div>

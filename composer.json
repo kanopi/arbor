@@ -1,0 +1,14 @@
+{
+    "name": "kanopi/arbor",
+    "description": "Drupal Child theme for Saplings",
+    "type": "drupal-theme",
+    "homepage": "https://github.com/kanopi/arbor",
+    "support": {
+        "issues": "https://github.com/kanopi/arbor/issues"
+    },
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+    }
+}

@@ -1,0 +1,3 @@
+arbor.settings:
+  type: arbor.settings
+  label: 'Arbor settings'
