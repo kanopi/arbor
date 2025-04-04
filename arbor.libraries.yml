@@ -12,3 +12,7 @@ gin_lb:
   css:
     theme:
       dist/css/components/gin_lb/gin_lb.css: { minified: true }
+
+hero-video:
+  js:
+    dist/js/hero.js: { minified: true }

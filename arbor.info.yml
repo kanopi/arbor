@@ -6,11 +6,14 @@ base theme: ui_suite_bootstrap
 hidden: false
 
 regions:
+  banner: "Banner"
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
   header: 'Top Bar'
   highlighted: 'Highlighted'
   help: 'Help'
+  hero: "Hero"
+  pre_content: "Pre Content"
   content: 'Content'
   sidebar_first: 'Primary'
   sidebar_second: 'Secondary'
