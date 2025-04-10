@@ -1,0 +1,5 @@
+name: Preview
+slots:
+  number: Number
+  description: Description text would display header
+  content: Content would display here.

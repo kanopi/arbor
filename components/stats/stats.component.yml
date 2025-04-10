@@ -1,0 +1,32 @@
+name: Stat
+description: "Render stat with width, background, margin, padding and container classes."
+group: Stat
+variants:
+  default:
+    title: Default
+slots:
+  number:
+    title: Number
+    description: "Number"
+  description:
+    title: Description
+    description: "description"
+  prefix:
+    title: Prefix
+    description: "Prefix"
+  suffix:
+    title: Suffix
+    description: "Suffix"
+props:
+  type: object
+  properties: 
+    count_down:
+      title: "Count Down"
+      description: "Animate the number counting down instead of up."
+      type: boolean
+libraryOverrides:
+  css:
+    component:
+      styles/animated-stat.css: {}
+  js:
+    js/animated-statistics.js: {}
