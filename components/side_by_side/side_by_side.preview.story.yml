@@ -1,0 +1,4 @@
+name: Preview
+slots:
+  col_1_content: <img class="img-fluid" src="https://placehold.co/600x400">
+  col_2_content: "<h2>I am a title</h2><p>And I am a description</p>"

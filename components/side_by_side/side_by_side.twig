@@ -1,0 +1,41 @@
+{% set col_attributes = [
+  create_attribute(col_1_attributes|default({})),
+  create_attribute(col_2_attributes|default({})),
+] %}
+
+{# Initialize row classes #}
+{% set row_classes = [
+  'row',
+] %}
+
+{# Add flex-row-reverse class if reverse_order is true #}
+{% if reverse_order is defined and reverse_order == true %}
+  {% set row_classes = row_classes|merge(['flex-md-row-reverse']) %}
+{% endif %}
+
+{% set attributes = attributes.addClass(row_classes) %}
+
+{% set utility_classes = [
+  padding ? padding,
+  margin ? margin,
+  background ? background,
+] %}
+
+{% set core_classes = [
+  container ? container,
+  width ? width,
+] %}
+
+<div{{ create_attribute().addClass(utility_classes) }}>
+  <div{{ create_attribute().addClass(core_classes) }}>
+    <div{{ attributes }}>
+      {% for region in [col_1_content, col_2_content] %}
+        {% set region = region and region is not sequence ? [region] : region %}
+        <div{{ col_attributes[loop.index0].addClass([
+          'align-self-center col-md-6 mt-3 mt-lg-0']) }}>
+          {{ region }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

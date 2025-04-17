@@ -1,0 +1,47 @@
+name: "Side by Side"
+description: "The grid system uses a series of containers, rows, and columns to layout and align content. Use the container attributes, row attributes (= component attributes) and/or col attributes to set responsive declinations of classes and/or classes already declared by styles."
+group: Layout
+icon_map:
+  - [main, second]
+links:
+  - url: 'https://getbootstrap.com/docs/5.3/layout/containers/'
+    title: 'See container documentation'
+slots:
+  col_1_content:
+    title: "Col 1"
+    description: "The content of the column 1."
+  col_2_content:
+    title: "Col 2"
+    description: "The content of the column 2."
+props:
+  type: object
+  properties:
+    reverse_order:
+      title: "Reverse Order"
+      description: "Display text on the left instead of the right?"
+      type: boolean
+    container:
+      type: string
+      title: container
+      description: "Container"
+      enum: ['default', 'container','container-fluid']
+    margin:
+      type: string
+      title: margin
+      description: "Margin"
+      enum: ['default','mt-1 mb-1','mt-3 mb-3','mt-5 mb-5','mt-1','mt-2','mt-3','mt-5','mb-1','mb-2','mb-3','mb-5']
+    padding:
+      type: string
+      title: padding
+      description: "Padding"
+      enum: ['default','pt-1 pb-1','pt-3 pb-3','pt-5 pb-5','pt-1','pt-2','pt-3','pt-5','pb-1','pb-2','pb-3','pb-5']
+    background:
+      type: string
+      title: background
+      description: "Background"
+      enum: ['default', 'text-bg-primary','text-bg-secondary','text-bg-dark','text-bg-light']
+    width:
+      type: string
+      title: width
+      description: "Width"
+      enum: ['default', 'col-lg-9 col-12','col-lg-6 col-12','col-lg-3 col-12','col-lg-4 col-12']
