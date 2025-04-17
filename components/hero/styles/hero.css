@@ -1,0 +1,130 @@
+.hero-paragraph .img-fluid {
+    width: 100%;
+}
+
+.hero-paragraph {
+    min-height: 55vh;
+}
+
+.hero-paragraph .contextual {
+    display: none;
+}
+
+[data-overlay-dark] .hero-content {
+    background: #252525 none repeat scroll 0 0;
+    color: white;
+    padding: 20px;
+}
+
+[data-overlay-dark="9"] .hero-content {
+    opacity: 0.9;
+}
+
+[data-overlay-light="9"] .hero-content {
+    opacity: 0.9;
+}
+
+[data-overlay-dark="8"] .hero-content {
+    opacity: 0.8;
+}
+
+[data-overlay-light="8"] .hero-content {
+    opacity: 0.8;
+}
+
+[data-overlay-dark="7"] .hero-content {
+    opacity: 0.7;
+}
+
+[data-overlay-light="7"] .hero-content {
+    opacity: 0.7;
+}
+
+[data-overlay-dark="6"] .hero-content {
+    opacity: 0.6;
+}
+
+[data-overlay-light="6"] .hero-content {
+    opacity: 0.6;
+}
+
+[data-overlay-dark="5"] .hero-content {
+    opacity: 0.5;
+}
+
+[data-overlay-light="5"] .hero-content {
+    opacity: 0.5;
+}
+
+[data-overlay-dark="4"] .hero-content {
+    opacity: 0.4;
+}
+
+[data-overlay-light="4"] .hero-content {
+    opacity: 0.4;
+}
+
+[data-overlay-dark="3"] .hero-content {
+    opacity: 0.3;
+}
+
+[data-overlay-light="3"] .hero-content {
+    opacity: 0.3;
+}
+
+[data-overlay-dark="2"] .hero-content {
+    opacity: 0.2;
+}
+
+[data-overlay-light="2"] .hero-content {
+    opacity: 0.2;
+}
+
+[data-overlay-dark="1"] .hero-content {
+    opacity: 0.1;
+}
+
+[data-overlay-light="1"] .hero-content {
+    opacity: 0.1;
+}
+
+[data-overlay-light] .hero-content {
+    background: white;
+    padding: 20px;
+}
+
+.video-background-controls {
+    z-index: 3 !important;
+}
+
+.video-background-controls button {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    padding: 0.375rem;
+}
+
+.video-background-controls button i {
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="m256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-32-320v128c0 17.7-14.3 32-32 32s-32-14.3-32-32v-128c0-17.7 14.3-32 32-32s32 14.3 32 32zm128 0v128c0 17.7-14.3 32-32 32s-32-14.3-32-32v-128c0-17.7 14.3-32 32-32s32 14.3 32 32z" /%3E%3Cpath d="m512 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zm188.3-108.9c-7.6 4.2-12.3 12.3-12.3 20.9v176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z" /%3E%3Cpath d="m240.88 591.02234c9.2 4.16 15.12 13.28 15.12 23.36v307.19998c0 10.08-5.92 19.2-15.12 23.36s-20 2.48-27.52-4.24l-107.92-95.91998h-54.24c-28.24 0-51.2-22.96-51.2-51.2v-51.2c0-28.24 22.96-51.2 51.2-51.2h54.24l107.92-95.92c7.52-6.72 18.32-8.32 27.52-4.24zm99.12 105.76 44 44 44-44c7.52-7.52 19.68-7.52 27.12 0s7.52 19.68 0 27.12l-44 44 44 44c7.52 7.52 7.52 19.68 0 27.12s-19.68 7.52-27.12 0l-44-44-44 44c-7.52 7.52-19.68 7.52-27.12 0s-7.52-19.68 0-27.12l44-44-44-44c-7.52-7.52-7.52-19.68 0-27.12s19.68-7.52 27.12 0z" /%3E%3Cpath d="m938.88 589.22329c51.92 42.16 85.12 106.64 85.12 178.8s-33.2 136.56-85.12 178.79999c-8.24 6.72-20.32 5.44-27.04-2.8s-5.44-20.32 2.8-27.04c43.36-35.19999 70.96-88.79999 70.96-148.95999s-27.6-113.76-70.96-149.04c-8.24-6.72-9.44-18.8-2.8-27.04s18.8-9.44 27.04-2.8zm-48.4 59.6c34.56 28.16 56.72 71.12 56.72 119.2s-22.16 91.04-56.72 119.2c-8.24 6.72-20.32 5.44-27.04-2.8s-5.44-20.32 2.8-27.04c26-21.12 42.56-53.28 42.56-89.36s-16.56-68.24-42.56-89.44c-8.24-6.72-9.44-18.8-2.8-27.04s18.8-9.44 27.04-2.8zm-48.4 59.6c17.2 14.08 28.32 35.52 28.32 59.6s-11.12 45.52-28.32 59.6c-8.24 6.72-20.32 5.44-27.04-2.8s-5.44-20.32 2.8-27.04c8.64-7.04 14.16-17.76 14.16-29.76s-5.52-22.72-14.16-29.84c-8.24-6.72-9.44-18.8-2.8-27.04s18.8-9.44 27.04-2.8zm-89.2-117.36c9.2 4.16 15.12 13.28 15.12 23.36v307.19999c0 10.08-5.92 19.2-15.12 23.36s-20 2.48-27.52-4.24l-107.92-95.91999h-54.24c-28.24 0-51.2-22.96-51.2-51.2v-51.2c0-28.24 22.96-51.2 51.2-51.2h54.24l107.92-95.92c7.52-6.72 18.32-8.32 27.52-4.24z" /%3E%3C/svg%3E%0A');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    height: 1rem;
+    width: 1rem;
+}
+
+.video-background-controls button::before {
+    display: none;
+}
+
+.video-background-controls .play-toggle.paused i {
+    background-position: 100% 0;
+}
+
+.video-background-controls .mute-toggle i {
+    background-position: 0 100%;
+}
+
+.video-background-controls .mute-toggle.muted i {
+    background-position: 100% 100%;
+}
