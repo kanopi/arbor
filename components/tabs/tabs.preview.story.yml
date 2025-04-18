@@ -1,0 +1,11 @@
+name: Preview
+slots:
+  header: Header
+  description: Description text would display header
+  content: Content would display here.
+props:
+  container: container
+  margin: mt-5 mb-5
+  padding: pt-3 pb-3
+  background: text-bg-primary
+  width: col-lg-9 col-12

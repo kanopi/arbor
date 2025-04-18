@@ -1,0 +1,58 @@
+name: Tabs
+description: "Render tab with width, background, margin, padding and container classes."
+group: Tabs
+variants:
+  default:
+    title: Default
+slots:
+  header:
+    title: Header
+    description: "Header"
+  description:
+    title: Description
+    description: "description"
+  content:
+    title: Content
+    description: "Content"
+props:
+  type: object
+  properties:
+    container:
+      type: string
+      title: container
+      description: "Container"
+      enum: ['default', 'container','container-fluid']
+    margin:
+      type: string
+      title: margin
+      description: "Margin"
+      enum: ['default','mt-1 mb-1','mt-3 mb-3','mt-5 mb-5','mt-1','mt-2','mt-3','mt-5','mb-1','mb-2','mb-3','mb-5']
+    padding:
+      type: string
+      title: padding
+      description: "Padding"
+      enum: ['default','pt-1 pb-1','pt-3 pb-3','pt-5 pb-5','pt-1','pt-2','pt-3','pt-5','pb-1','pb-2','pb-3','pb-5']
+    background:
+      type: string
+      title: background
+      description: "Background"
+      enum: ['default', 'text-bg-primary','text-bg-secondary','text-bg-dark','text-bg-light']
+    width:
+      type: string
+      title: width
+      description: "Width"
+      enum: ['default', 'col-lg-9 col-12','col-lg-6 col-12','col-lg-3 col-12','col-lg-4 col-12']
+    verticaltabs: 
+      title: "Vertical Tabs"
+      description: "Display as vertical tabs on desktop."
+      type: boolean
+    accordion: 
+      title: "Accordion on Mobile"
+      description: "Display as accordion on mobile."
+      type: boolean
+libraryOverrides:
+  css:
+    component:
+      styles/tabs.css: {}
+  js:
+    js/tabs.js: {}

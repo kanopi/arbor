@@ -1,0 +1,42 @@
+.nav.nav-tabs.nav-tabs-mobile {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    padding: 0.625rem 2.25rem 0.625rem 0.625rem;
+    margin-bottom: 1.25rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 130%;
+    border-radius: 3px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+/** Vertical Tabs **/
+@media (min-width: 992px) {
+    .vtabs {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 1rem;
+    }
+}
+
+.vtabs .accordion-item {
+    border: none;
+}
+
+.vtabs .nav-tabs .nav-link {
+    width: 100%;
+    text-align: left;
+    border-radius: 0.375rem;
+}
+
+.vtabs .nav-tabs .nav-link.active {
+    border-bottom: #dee2e6 1px solid;
+}
+
+.vtabs ul.nav-tabs.nav  {
+    display: block;
+    border-bottom: none;
+}
