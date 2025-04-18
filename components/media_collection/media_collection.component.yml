@@ -1,0 +1,42 @@
+name: Media Collection
+description: "Render media collection component that opens in a modal."
+group: Media Collection
+variants:
+  default:
+    title: Default
+slots:
+  header:
+    title: Header
+    description: "Header"
+  description:
+    title: Description
+    description: "description"
+  content:
+    title: Content
+    description: "Content"
+props:
+  type: object
+  properties:
+    container:
+      type: string
+      title: container
+      description: "Container"
+      enum: ['default', 'container','container-fluid']
+    margin:
+      type: string
+      title: margin
+      description: "Margin"
+      enum: ['default','mt-1 mb-1','mt-3 mb-3','mt-5 mb-5','mt-1','mt-2','mt-3','mt-5','mb-1','mb-2','mb-3','mb-5']
+    padding:
+      type: string
+      title: padding
+      description: "Padding"
+      enum: ['default','pt-1 pb-1','pt-3 pb-3','pt-5 pb-5','pt-1','pt-2','pt-3','pt-5','pb-1','pb-2','pb-3','pb-5']
+libraryOverrides:
+  css: 
+    component:
+      styles/media-collection.css: {}
+  js:
+    js/bs5-lightbox.min.js: {}
+  dependencies:
+    - ui_suite_bootstrap/bootstrap
