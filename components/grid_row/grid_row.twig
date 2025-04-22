@@ -61,12 +61,13 @@
   col_offset ? 'offset-' ~ col_offset,
 ]) %}
 <div{{ create_attribute().addClass(core_classes) }}>
-{{ header }}
-{{ description }}
-<div{{attributes.addClass(classes)}}>
-    {% for item in content[0]['#items'].value %}
-    <div class="col p-0">
-      {{ drupal_entity('paragraph', item.target_id )}}
-    </div>
-  {% endfor %}
+  {{ header }}
+  {{ description }}
+  <div{{attributes.addClass(classes)}}>
+      {% for item in content[0]['#items'].value %}
+      <div class="col p-0">
+        {{ drupal_entity('paragraph', item.target_id )}}
+      </div>
+    {% endfor %}
+  </div>
 </div>
