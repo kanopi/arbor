@@ -18,7 +18,7 @@
         {% set mediatype = 'remote_video' %}
         {% set media = item.content['#media'].field_media_oembed_video.value %}
     {% endif %}
-    <button data-src="{{ media }}" data-toggle="lightbox" data-gallery="mixedgallery" {% if mediatype == 'image' %}data-type="html"{% endif %} class="
+    <button data-src="{{ media }}" data-toggle="lightbox" data-gallery="mixedgallery" {% if mediatype == 'image' %}data-type="html"{% endif %} class="media-collection-button mb-3 
         {% if items|length == 1 %}
             col-12
         {% elseif items|length == 2 %}

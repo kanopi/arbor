@@ -31,3 +31,8 @@
 .media--view-mode-media-collection lite-youtube {
     display: none;
 }
+
+.media-collection-button {
+    border: 0;
+    background: none;
+}
