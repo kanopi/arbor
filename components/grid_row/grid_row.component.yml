@@ -45,6 +45,16 @@ props:
       title: width
       description: "Width"
       enum: ['default', 'col-lg-9 col-12','col-lg-6 col-12','col-lg-3 col-12','col-lg-4 col-12']
+    align_items_vertically:
+      type: string
+      title: align_items_vertically
+      description: "Align Items vertically"
+      enum: ['default', 'align-items-start','align-items-end','align-items-center']
+    justify_content_horizontal:
+      type: string
+      title: justify_content_horizontal
+      description: "Justify Content Horizontally"
+      enum: ['default', 'justify-content-start','justify-content-end','justify-content-center','justify-content-between','justify-content-around','justify-content-evenly']
     with_container:
       title: "With container? (deprecated)"
       description: "Use the container option instead."
