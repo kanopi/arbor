@@ -50,6 +50,9 @@
   {% endif %}
   <div{{ create_attribute().addClass(core_classes) }}>
     <div{{create_attribute().addClass(content_classes)}}>
+    {% if heading %}
+      <h1>{{ heading }}</h1>
+    {% endif %}
       {{ content }}
     </div>
   </div>

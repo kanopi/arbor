@@ -76,20 +76,6 @@
   </div>
 {% endif %}
 
-{% if page.pre_content %}
-  {% block pre_content %}
-    <div class="container mt-3 mb-3" id="precontent">
-      {{ page.pre_content }}
-    </div>
-  {% endblock %}
-{% endif %}
-{# Hero #}
-{% if page.hero %}
-  {% block hero %}
-    {{ page.hero }}
-  {% endblock %}
-{% endif %}
-
 {% if page.header %}
   {{ include('ui_suite_bootstrap:grid_row_1', {
     container: container,
@@ -103,6 +89,20 @@
     },
     col_1_content: page.header,
   }, with_context: false) }}
+{% endif %}
+{% if page.pre_content %}
+  {% block pre_content %}
+    <div class="container mt-3 mb-3" id="precontent">
+      {{ page.pre_content }}
+    </div>
+  {% endblock %}
+{% endif %}
+
+{# Hero #}
+{% if page.hero %}
+  {% block hero %}
+    {{ page.hero }}
+  {% endblock %}
 {% endif %}
 
 {% set main_content = [
