@@ -5,20 +5,6 @@ dependencies:
     - system
   theme:
     - arbor
-third_party_settings:
-  ui_styles:
-    block:
-      selected:
-        colors_background_color: bg-light
-        spacing_padding_end: pe-2
-        spacing_padding_start: ps-2
-      extra: ''
-    title:
-      selected: {  }
-      extra: ''
-    content:
-      selected: {  }
-      extra: ''
 id: arbor_breadcrumbs
 theme: arbor
 region: header
