@@ -1,15 +1,7 @@
 bootstrap:
-  remote: http://getbootstrap.com/
-  license:
-    name: MIT
-    url: https://github.com/twbs/bootstrap/blob/main/LICENSE
-    gpl-compatible: false
-  js:
-    /libraries/bootstrap/dist/js/bootstrap.bundle.min.js: { minified: true }
   css:
     theme:
-      /libraries/bootstrap/dist/css/bootstrap.min.css: { minified: true }
-      assets/css/form/form-text.css: { }
+      dist/css/styles.css: { minified: true }
 
 form:
   css:

@@ -1,20 +1,19 @@
 name: 'Arbor'
 type: theme
-description: 'Subtheme based on UI Suite Bootstrap that works with the Saplings'
+description: 'Arbor theme.'
 core_version_requirement: ^10.2 || ^11
 base theme: ui_suite_bootstrap
 hidden: false
 
 regions:
-  banner: "Banner"
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
   header: 'Top Bar'
   highlighted: 'Highlighted'
   help: 'Help'
+  content: 'Content'
   hero: "Hero"
   pre_content: "Pre Content"
-  content: 'Content'
   sidebar_first: 'Primary'
   sidebar_second: 'Secondary'
   footer: 'Footer'
@@ -37,3 +36,8 @@ libraries-extend:
     - arbor/bootstrap
   ui_suite_bootstrap/form:
     - arbor/form
+
+# Information added by Drupal.org packaging script on 2025-04-09
+version: '5.1.0-beta1'
+project: 'ui_suite_bootstrap'
+datestamp: 1744207245

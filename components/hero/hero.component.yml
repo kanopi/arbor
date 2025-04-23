@@ -5,6 +5,9 @@ variants:
   default:
     title: Default
 slots:
+  heading:
+    title: Heading
+    description: "Title"
   hero_background:
     title: Hero Background
     description: "Hero Background"
@@ -47,7 +50,7 @@ props:
       title: "Include Pause Button?"
       description: "Show a pause button on the hero. Include if using a video."
       type: boolean
-    overlay: 
+    overlay:
       type: string
       title: "Overlay"
       description: "Pick an overlay background level"
