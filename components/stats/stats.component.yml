@@ -19,14 +19,11 @@ slots:
     description: "Suffix"
 props:
   type: object
-  properties: 
+  properties:
     count_down:
       title: "Count Down"
       description: "Animate the number counting down instead of up."
       type: boolean
 libraryOverrides:
-  css:
-    component:
-      styles/animated-stat.css: {}
   js:
     js/animated-statistics.js: {}

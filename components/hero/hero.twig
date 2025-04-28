@@ -5,7 +5,7 @@
     'hero-paragraph',
     margin ? margin,
     'bg-primary',
-    'position-relative'
+    'position-relative',
   ]
 %}
 
@@ -17,43 +17,47 @@
     'd-flex',
     'flex-column',
     justify ? justify,
-    'pt-lg-5 pb-lg-5',
-    'justify-content-end'
+    'justify-content-end',
 ]
 %}
 
 {% set content_classes = [
     'hero-content',
+    'p-lg-5 p-3',
     container ? container,
     width ? width,
     padding ? padding,
+    overlay_opacity ? overlay_opacity,
+    overlay ? overlay,
 ]
 %}
-
-{% if overlay_invert %}
-  {% set attributes = attributes.setAttribute('data-overlay-light', overlay) %}
-{% else %}
-  {% set attributes = attributes.setAttribute('data-overlay-dark', overlay) %}
-{% endif %}
-
-<div{{attributes.addClass(classes)}}>
-  {% if hero_background %}
-    {% if hero_background[0][0]['#media'].bundle.value.0.target_id == 'image' or story == true %}
-      <div class="hero-image w-100 h-100">
-          {{ hero_background }}
+{% if hide_header is not defined or hide_header == false %}
+{# {% if hide_header is defined and not hide_header %} #}
+ {% if hero_background is not empty %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if hero_background %}
+      {% if hero_background[0][0]['#media'].bundle.value.0.target_id == 'image' or story == true %}
+        <div class="hero-image w-100 h-100">
+            {{ hero_background }}
+        </div>
+      {% elseif hero_background[0][0]['#media'].bundle.value.0.target_id == 'remote_video' %}
+        <div class="hero-image" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ hero_background[0][0]['#media'].field_media_oembed_video.0.value }}"></div>
+      {% else %}
+        <div class="hero-image" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ file_url(hero_background[0][0]['#media'].field_media_video_file.entity.uri.value) }}"></div>
+      {% endif %}
+    {% endif %}
+    <div{{ create_attribute().addClass(core_classes) }}>
+      <div{{ create_attribute().addClass(content_classes) }}>
+      {% if heading %}
+        <h1>{{ heading }}</h1>
+      {% endif %}
+        {{ content }}
       </div>
-    {% elseif hero_background[0][0]['#media'].bundle.value.0.target_id == 'remote_video' %}
-      <div class="hero-image" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ hero_background[0][0]['#media'].field_media_oembed_video.0.value }}"></div>
-    {% else %}
-      <div class="hero-image" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ file_url(hero_background[0][0]['#media'].field_media_video_file.entity.uri.value) }}"></div>
-    {% endif %}
-  {% endif %}
-  <div{{ create_attribute().addClass(core_classes) }}>
-    <div{{create_attribute().addClass(content_classes)}}>
-    {% if heading %}
-      <h1>{{ heading }}</h1>
-    {% endif %}
-      {{ content }}
     </div>
   </div>
-</div>
+ {% else %}
+{% if heading %}
+        <h1>{{ heading }}</h1>
+      {% endif %}
+  {% endif %}
+{% endif %}
