@@ -64,7 +64,3 @@ props:
       title: "Overlay Opacity"
       description: "Choose your opacity"
       enum: ['default','bg-opacity-10','bg-opacity-25','bg-opacity-50','bg-opacity-75']
-libraryOverrides:
-  css:
-    component:
-      styles/hero.css: {}
