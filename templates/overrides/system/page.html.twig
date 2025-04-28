@@ -72,7 +72,7 @@
       placement: 'default',
       toggle_action: 'collapse',
       toggler_position: 'end',
-    }, with_context = false) }}
+    }, with_context: false) }}
   </div>
 {% endif %}
 
@@ -98,12 +98,15 @@
   {% endblock %}
 {% endif %}
 
+
 {# Hero #}
 {% if page.hero %}
+<header>
   {% block hero %}
     {{ page.hero }}
   {% endblock %}
 {% endif %}
+</header>
 
 {% set main_content = [
   page.highlighted,
@@ -112,7 +115,7 @@
     '#type': 'html_tag',
     '#tag': 'div',
     '#attributes': {
-      'id': 'main-content',
+      id: 'main-content',
     },
   },
   page.content,
@@ -175,8 +178,67 @@
   }, with_context: false) }}
 {% endif %}
 
-{% if page.footer %}
-  <footer class="border-top mt-3 pt-3 {{ container }}" role="contentinfo">
-    {{ page.footer }}
+  <footer class="border-top mt-3 pt-3 bg-secondary {{ container }}" role="contentinfo">
+  <div class="row">
+  {% if page.footer_branding %}
+  <div class="col col-12 col-md-3 footer branding">
+  {{ page.footer_branding }}
+  </div>
+  {% endif %}
+  {% if page.footer_menu %}
+  <div class="col col-12 col-md-9 footer menu">
+  {{ include('arbor:navbar', {
+      attributes: {
+        class: [
+          'bg-secondary',
+        ],
+      },
+      container_attributes: {
+      class: ['justify-content-md-end'],
+      },
+      navigation: page.footer_menu,
+      variant: 'expand_lg',
+      placement: 'default',
+      toggler_position: 'none',
+    }, with_context: false) }}
+  </div>
+  {% endif %}
+  {% if page.footer_social %}
+  <div class="col col-12 footer social">
+  {{ include('arbor:navbar', {
+      attributes: {
+        class: [
+          'bg-secondary',
+        ],
+      },
+      container_attributes: {
+      class: ['justify-content-md-end'],
+      },
+      navigation: page.footer_social,
+      variant: 'expand_lg',
+      placement: 'default',
+      toggler_position: 'none',
+    }, with_context: false) }}
+  </div>
+  {% endif %}
+  {% if page.footer_legal %}
+  <div class="col col-12 footer legal">
+  {{ include('arbor:navbar', {
+      attributes: {
+        class: [
+          'bg-secondary',
+        ],
+      },
+      container_attributes: {
+      class: ['justify-content-md-end'],
+      },
+      navigation: page.footer_legal,
+      variant: 'expand_lg',
+      placement: 'default',
+      toggler_position: 'none',
+    }, with_context: false) }}
+  </div>
+  {% endif %}
+  </div>
   </footer>
-{% endif %}
+
