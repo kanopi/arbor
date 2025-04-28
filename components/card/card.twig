@@ -63,7 +63,9 @@
         {{ header }}
       </div>
     {% endif %}
+    <div class="ps-3 pe-3 pt-2 pb-2">
     {{ content }}
+    </div>
     {% if footer %}
       {% set footer_attributes = create_attribute(footer_attributes|default({})) %}
       <div{{ footer_attributes.addClass('card-footer') }}>

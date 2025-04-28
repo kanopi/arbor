@@ -3,22 +3,22 @@
     {% set mediatype = '' %}
     {% if item.content['#media'].bundle.value[0].target_id == 'image' %}
         {% set mediatype = 'image' %}
-        {% set caption = "" %}
+        {% set caption = '' %}
         {% if item.content['#media'].field_caption.value is not empty %}
-            {% set caption = "<div class='caption'>" ~ item.content['#media'].field_caption.value ~ "</div>" %}
+            {% set caption = "<div class='caption'>" ~ item.content['#media'].field_caption.value ~ '</div>' %}
         {% endif %}
-        {% set media = 
+        {% set media =
         "<div>
-            <img src='" ~ file_url(item.content['#media'].field_media_image[0].entity.fileuri) ~  "' class='d-block mw-100 mh-100 h-auto w-auto m-auto top-0 end-0 bottom-0 start-0 img-fluid' style='z-index: 1; object-fit: contain;'>" ~
+            <img src='" ~ file_url(item.content['#media'].field_media_image[0].entity.fileuri) ~ "' class='d-block mw-100 mh-100 h-auto w-auto m-auto top-0 end-0 bottom-0 start-0 img-fluid' style='z-index: 1; object-fit: contain;'>" ~
             caption ~
-        "</div>" 
+        '</div>'
         %}
-        
+
     {% else %}
         {% set mediatype = 'remote_video' %}
         {% set media = item.content['#media'].field_media_oembed_video.value %}
     {% endif %}
-    <button data-src="{{ media }}" data-toggle="lightbox" data-gallery="mixedgallery" {% if mediatype == 'image' %}data-type="html"{% endif %} class="media-collection-button mb-3 
+    <button data-src="{{ media }}" data-toggle="lightbox" data-gallery="mixedgallery" {% if mediatype == 'image' %}data-type="html"{% endif %} class="media-collection-button mb-3
         {% if items|length == 1 %}
             col-12
         {% elseif items|length == 2 %}

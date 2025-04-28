@@ -1,0 +1,18 @@
+footer .navbar {
+  background-image: none;
+}
+
+footer {
+  .navbar {
+    background-image: none;
+  }
+  .nav-link {
+    color: white;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

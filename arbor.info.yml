@@ -16,12 +16,15 @@ regions:
   pre_content: "Pre Content"
   sidebar_first: 'Primary'
   sidebar_second: 'Secondary'
-  footer: 'Footer'
+  footer_branding: 'Footer Branding'
+  footer_menu: "Footer Menu"
+  footer_legal: "Footer Legal"
+  footer_social: "Footer Social"
   page_top: 'Page top'
   page_bottom: 'Page bottom'
 
 ckeditor5-stylesheets:
-  - assets/css/ckeditor5.css
+  - dist/css/ckeditor5.css
 
 libraries-override:
   ui_suite_bootstrap/bootstrap:

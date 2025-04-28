@@ -37,6 +37,10 @@ props:
       title: width
       description: "Width"
       enum: ['default', 'col-lg-9 col-12','col-lg-6 col-12','col-lg-3 col-12','col-lg-4 col-12']
+    hide_header:
+      title: "Hide Header"
+      description: "Hide Hero and Page title"
+      type: boolean
     justify:
       type: string
       title: justify
@@ -54,11 +58,12 @@ props:
       type: string
       title: "Overlay"
       description: "Pick an overlay background level"
-      enum: ['default','9','8','7','6','5','4','3','2','1']
-    overlay_invert:
-      title: "Overlay Invert?"
-      description: "Make the background overlay white"
-      type: boolean
+      enum: ['default','bg-primary bg-gradient text-white','bg-secondary bg-gradient text-white','bg-dark bg-gradient text-white','bg-black bg-gradient text-white','bg-light bg-gradient text-dark']
+    overlay_opacity:
+      type: string
+      title: "Overlay Opacity"
+      description: "Choose your opacity"
+      enum: ['default','bg-opacity-10','bg-opacity-25','bg-opacity-50','bg-opacity-75']
 libraryOverrides:
   css:
     component:

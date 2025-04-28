@@ -4,7 +4,7 @@
   {% set parent_paragraph = element['#object'].id.value %}
 {% endif %}
 
-{% set pane_id_base = "pane-" ~ random() %}
+{% set pane_id_base = 'pane-' ~ random() %}
 
 {# If Accordion on Mobile is Checked #}
 {% if element['#object'].sa_accordion_mobile.value == 1 %}
@@ -16,7 +16,7 @@
   <select id="nav-tabs-mobile-js" class="nav nav-tabs nav-tabs-mobile nav-tabs-mobile-js" role="tablist">
     {% for item in items %}
       <option value="#{{ parent_paragraph ~ '-' ~ loop.index }}" class="nav-link {% if loop.first %}active{% endif %}" href="#{{ parent_paragraph ~ '-' ~ loop.index }}" aria-controls="{{ parent_paragraph ~ '-' ~ loop.index }}" role="tab" data-bs-toggle="tab" aria-selected="true" {% if not loop.first %} tabindex="-1" {% endif %}>
-        {{ drupal_entity('paragraph', item.content['#paragraph'].id.value, 'sa_tab_item' )}} 
+        {{ drupal_entity('paragraph', item.content['#paragraph'].id.value, 'sa_tab_item') }}
       </option>
     {% endfor %}
   </select>
@@ -27,7 +27,7 @@
     {% for item in items %}
       <li class="nav-item" role="presentation">
         <button role="tab" data-bs-toggle="tab" aria-controls="{{ parent_paragraph ~ '-' ~ loop.index }}" data-bs-target="#{{ parent_paragraph ~ '-' ~ loop.index }}" class="nav-link contextual-region {% if loop.first %}active{% endif %}" aria-selected="false" {% if not loop.first %} tabindex="-1" {% endif %}>
-          {{ drupal_entity('paragraph', item.content['#paragraph'].id.value, 'sa_tab_item' )}} 
+          {{ drupal_entity('paragraph', item.content['#paragraph'].id.value, 'sa_tab_item') }}
         </button>
       </li>
     {% endfor %}
@@ -43,11 +43,11 @@
   {% for item in items %}
     {% set tab_classes = [] %}
     {% set tab_classes = [
-        loop.first ? "show active tab-pane" : "tab-pane"
+        loop.first ? 'show active tab-pane' : 'tab-pane',
       ]
     %}
     <div {{ create_attribute().addClass(tab_classes) }} id="{{ parent_paragraph ~ '-' ~ loop.index }}" role="tabpanel">
-      {{ drupal_entity('paragraph', item.content['#paragraph'].id.value )}} 
+      {{ drupal_entity('paragraph', item.content['#paragraph'].id.value) }}
     </div>
   {% endfor %}
 </div>
@@ -59,7 +59,6 @@
 
 {% if element['#object'].sa_accordion_mobile.value == 1 %}
   <div class="d-lg-none d-block">
-   
+
   </div>
 {% endif %}
-
