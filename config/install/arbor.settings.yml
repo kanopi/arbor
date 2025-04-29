@@ -7,6 +7,11 @@ features:
   node_user_picture: true
 logo:
   use_default: true
+ui_skins_css_variables:
+  bs_gradient:
+    ':root': ''
+ui_skins_theme: light
+container: container-fluid
 ui_styles_entity_status_unpublished:
   selected:
     colors_background_color: bg-danger-subtle
