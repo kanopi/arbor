@@ -24,10 +24,15 @@
 {% set core_classes = [
   padding ? padding,
   margin ? margin,
-  background ? background,
   container ? container,
   width ? width,
 ]
+%}
+
+{%
+  set background = [
+    background ? background,
+  ]
 %}
 
 {% set attributes = attributes.addClass([
@@ -60,6 +65,7 @@
   spacing_margin_bottom,
   col_offset ? 'offset-' ~ col_offset,
 ]) %}
+<div{{ create_attribute().addClass(background) }}>
 <div{{ create_attribute().addClass(core_classes) }}>
   {{ header }}
   {{ description }}
@@ -70,4 +76,5 @@
       </div>
     {% endfor %}
   </div>
+</div>
 </div>

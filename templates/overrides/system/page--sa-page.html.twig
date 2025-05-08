@@ -60,11 +60,14 @@
     {% set header_gutter = 'gx-xxl-4' %}
   {% endif %}
   <div class="{{ container }} gx-0 {{ header_gutter }} mb-3">
-    {{ include('ui_suite_bootstrap:navbar', {
+    {{ include('arbor:navbar', {
       attributes: {
         class: [
           'bg-light',
         ],
+      },
+      nav_attributes: {
+      class: ['justify-content-md-end'],
       },
       navigation: page.navigation,
       navigation_collapsible: page.navigation_collapsible,
@@ -168,11 +171,14 @@
   }, with_context: false) }}
 {% else %}
   {{ include('ui_suite_bootstrap:grid_row_1', {
-    container: container,
     col_xs: 12,
     col_1_content: main_content,
     col_attributes: {
       role: 'main',
+      class: ['p-0'],
+    },
+    attributes: {
+      class: ['m-0'],
     },
   }, with_context: false) }}
 {% endif %}
