@@ -22,16 +22,21 @@
 %}
 
 {% set content_classes = [
-    'hero-content',
-    'p-lg-5 p-3',
     container ? container,
     width ? width,
     padding ? padding,
+]
+%}
+
+{% set overlay_classes = [
+    'hero-content',
+    'p-lg-5 p-3',
     overlay_opacity ? overlay_opacity,
     overlay ? overlay,
 ]
 %}
 {% if hide_header is not defined or hide_header == false %}
+<div{{ create_attribute().addClass(content_classes) }}>
 {# {% if hide_header is defined and not hide_header %} #}
  {% if hero_background is not empty %}
   <div{{ attributes.addClass(classes) }}>
@@ -47,9 +52,17 @@
       {% endif %}
     {% endif %}
     <div{{ create_attribute().addClass(core_classes) }}>
-      <div{{ create_attribute().addClass(content_classes) }}>
+      <div{{ create_attribute().addClass(overlay_classes) }}>
       {% if heading %}
         <h1>{{ heading }}</h1>
+      {% endif %}
+      {% if date %}
+      {{ date }}
+      {% endif %}
+      {% if author and author_url %}
+      <a href="{{ author_url }}"{{ author }}</a>
+      {% elseif author %}
+      {{ author }}
       {% endif %}
         {{ content }}
       </div>
@@ -57,7 +70,18 @@
   </div>
  {% else %}
 {% if heading %}
+<div class="container">
         <h1>{{ heading }}</h1>
+        {% if date %}
+      {{ date }}
+      {% endif %}
+      {% if author and author_url %}
+      <a href="{{ author_url }}"{{ author }}</a>
+      {% elseif author %}
+      {{ author }}
+      {% endif %}
+        </div>
       {% endif %}
   {% endif %}
+</div>
 {% endif %}

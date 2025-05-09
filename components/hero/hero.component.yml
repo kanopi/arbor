@@ -14,6 +14,15 @@ slots:
   content:
     title: Content
     description: "Content"
+  date:
+    title: Date
+    description: "Date"
+  author:
+    title: Author
+    description: "Author"
+  author_url:
+    title: Author URL
+    description: "Author URL"
 props:
   type: object
   properties:
@@ -21,7 +30,7 @@ props:
       type: string
       title: container
       description: "Container"
-      enum: ['default', 'container','container-fluid']
+      enum: ['default', 'container']
     margin:
       type: string
       title: margin

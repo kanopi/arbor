@@ -1,12 +1,14 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - arbor
 id: arbor_page_title
 theme: arbor
-region: header
-weight: 0
+region: content
+weight: -30
 provider: null
 plugin: page_title_block
 settings:
@@ -14,4 +16,8 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'

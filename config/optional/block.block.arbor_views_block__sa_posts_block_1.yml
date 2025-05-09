@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sa_posts
+  module:
+    - block_class
+    - node
+    - views
+  theme:
+    - arbor
+third_party_settings:
+  block_class:
+    classes: container
+id: arbor_views_block__sa_posts_block_1
+theme: arbor
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:sa_posts-block_1'
+settings:
+  id: 'views_block:sa_posts-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      sa_post: sa_post
