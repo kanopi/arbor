@@ -2,6 +2,11 @@
   set classes = [
     padding ? padding,
     margin ? margin,
+  ]
+%}
+
+{%
+  set background = [
     background ? background,
   ]
 %}
@@ -11,11 +16,12 @@
     width ? width,
 ]
 %}
-
-<div{{attributes.addClass(classes)}}>
+<div{{ create_attribute().addClass(background) }}>
+<div{{ attributes.addClass(classes) }}>
 <div{{ create_attribute().addClass(core_classes) }}>
 {{ header }}
 {{ description }}
 {{ content }}
+</div>
 </div>
 </div>

@@ -1,0 +1,30 @@
+{%
+  set classes = [
+    padding ? padding,
+    margin ? margin,
+    background ? background,
+  ]
+%}
+
+{% set core_classes = [
+    container ? container,
+    width ? width,
+]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+<div{{ create_attribute().addClass(core_classes) }}>
+{{ header }}
+{{ description }}
+
+{% if verticaltabs %}<div class="vtabs">{% else %}{% endif %}
+{{ content }}
+{% if verticaltabs %}</div>{% else %}{% endif %}
+</div>
+</div>
+
+{% if accordion %}
+  <div class="d-lg-none d-block">
+    {{ drupal_entity('paragraph', content.0['#object'].id.0.value, 'accordion') }}
+  </div>
+{% endif %}

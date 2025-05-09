@@ -1,0 +1,10 @@
+name: Preview
+slots:
+  hero_background: <img class="img-fluid" src="https://placehold.co/1200x600" alt="Placeholder">
+  content: Content would display here.
+props: 
+  story: true
+  overlay: 7
+  container: container
+  justify: justify-content-lg-center
+  width: col-lg-9 col-12

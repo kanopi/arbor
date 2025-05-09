@@ -1,0 +1,27 @@
+name: "Feature"
+description: "Card with Icon"
+group: Card
+links:
+  - url: 'https://getbootstrap.com/docs/5.3/examples/features/'
+    title: 'See container documentation'
+slots:
+  title:
+    title: "Title"
+    description: "The Feature Title"
+  content:
+    title: "The Content"
+    description: "The feature content"
+  link:
+    title: "The link"
+    description: "The feature link"
+  icon:
+    title: "The Icon"
+    description: "The feature icon"
+props:
+  type: object
+  properties:
+    container:
+      type: string
+      title: container
+      description: "Container"
+      enum: ['default', 'container','container-fluid']

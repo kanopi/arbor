@@ -1,0 +1,80 @@
+{# Deprecated options compatibility. #}
+{% if with_container and not container %}
+  {% set container = 'container' %}
+{% endif %}
+{% if col_xs and not (col_xs starts with 'col-') %}
+  {% set col_xs = 'row-cols-' ~ col_xs %}
+{% endif %}
+{% if col_sm and not (col_sm starts with 'col-sm-') %}
+  {% set col_sm = 'row-cols-sm-' ~ col_sm %}
+{% endif %}
+{% if col_md and not (col_md starts with 'col-md-') %}
+  {% set col_md = 'row-cols-md-' ~ col_md %}
+{% endif %}
+{% if col_lg and not (col_lg starts with 'col-lg-') %}
+  {% set col_lg = 'row-cols-lg-' ~ col_lg %}
+{% endif %}
+{% if col_xl and not (col_xl starts with 'col-xl-') %}
+  {% set col_xl = 'row-cols-xl-' ~ col_xl %}
+{% endif %}
+{% if col_xxl and not (col_xxl starts with 'col-xxl-') %}
+  {% set col_xxl = 'row-cols-xxl-' ~ col_xxl %}
+{% endif %}
+
+{% set core_classes = [
+  padding ? padding,
+  margin ? margin,
+  container ? container,
+  width ? width,
+]
+%}
+
+{%
+  set background = [
+    background ? background,
+  ]
+%}
+
+{% set attributes = attributes.addClass([
+  'row',
+  gutters,
+  gutters_horizontal,
+  gutters_vertical,
+  align_items_vertically,
+  justify_content_horizontal,
+  row_cols ? 'row-cols-' ~ row_cols,
+  col_xs,
+  col_sm,
+  col_md,
+  col_lg,
+  col_xl,
+  col_xxl,
+  spacing_margin_bottom,
+  col_offset ? 'offset-' ~ col_offset,
+]) %}
+
+{% set col_attributes = create_attribute(col_attributes|default({})) %}
+{% set col_attributes = col_attributes.addClass([
+  'col',
+  col_xs,
+  col_sm,
+  col_md,
+  col_lg,
+  col_xl,
+  col_xxl,
+  spacing_margin_bottom,
+  col_offset ? 'offset-' ~ col_offset,
+]) %}
+<div{{ create_attribute().addClass(background) }}>
+<div{{ create_attribute().addClass(core_classes) }}>
+  {{ header }}
+  {{ description }}
+  <div{{ attributes.addClass(classes) }}>
+      {% for item in content[0]['#items'].value %}
+      <div class="col">
+        {{ drupal_entity('paragraph', item.target_id) }}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</div>

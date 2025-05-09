@@ -1,0 +1,87 @@
+{{ attach_library('arbor/hero-video') }}
+
+{%
+  set classes = [
+    'hero-paragraph',
+    margin ? margin,
+    'bg-primary',
+    'position-relative',
+  ]
+%}
+
+{% set core_classes = [
+    'position-absolute',
+    'w-100',
+    'h-100',
+    'top-0',
+    'd-flex',
+    'flex-column',
+    justify ? justify,
+    'justify-content-end',
+]
+%}
+
+{% set content_classes = [
+    container ? container,
+    width ? width,
+    padding ? padding,
+]
+%}
+
+{% set overlay_classes = [
+    'hero-content',
+    'p-lg-5 p-3',
+    overlay_opacity ? overlay_opacity,
+    overlay ? overlay,
+]
+%}
+{% if hide_header is not defined or hide_header == false %}
+<div{{ create_attribute().addClass(content_classes) }}>
+{# {% if hide_header is defined and not hide_header %} #}
+ {% if hero_background is not empty %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if hero_background %}
+      {% if hero_background[0][0]['#media'].bundle.value.0.target_id == 'image' or story == true %}
+        <div class="hero-image w-100 h-100">
+            {{ hero_background }}
+        </div>
+      {% elseif hero_background[0][0]['#media'].bundle.value.0.target_id == 'remote_video' %}
+        <div class="hero-image" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ hero_background[0][0]['#media'].field_media_oembed_video.0.value }}"></div>
+      {% else %}
+        <div class="hero-image" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ file_url(hero_background[0][0]['#media'].field_media_video_file.entity.uri.value) }}"></div>
+      {% endif %}
+    {% endif %}
+    <div{{ create_attribute().addClass(core_classes) }}>
+      <div{{ create_attribute().addClass(overlay_classes) }}>
+      {% if heading %}
+        <h1>{{ heading }}</h1>
+      {% endif %}
+      {% if date %}
+      {{ date }}
+      {% endif %}
+      {% if author and author_url %}
+      <a href="{{ author_url }}"{{ author }}</a>
+      {% elseif author %}
+      {{ author }}
+      {% endif %}
+        {{ content }}
+      </div>
+    </div>
+  </div>
+ {% else %}
+{% if heading %}
+<div class="container">
+        <h1>{{ heading }}</h1>
+        {% if date %}
+      {{ date }}
+      {% endif %}
+      {% if author and author_url %}
+      <a href="{{ author_url }}"{{ author }}</a>
+      {% elseif author %}
+      {{ author }}
+      {% endif %}
+        </div>
+      {% endif %}
+  {% endif %}
+</div>
+{% endif %}

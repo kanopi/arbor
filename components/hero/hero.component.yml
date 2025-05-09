@@ -1,0 +1,75 @@
+name: Hero
+description: "Render hero component with width, background, margin, padding and container classes."
+group: Hero
+variants:
+  default:
+    title: Default
+slots:
+  heading:
+    title: Heading
+    description: "Title"
+  hero_background:
+    title: Hero Background
+    description: "Hero Background"
+  content:
+    title: Content
+    description: "Content"
+  date:
+    title: Date
+    description: "Date"
+  author:
+    title: Author
+    description: "Author"
+  author_url:
+    title: Author URL
+    description: "Author URL"
+props:
+  type: object
+  properties:
+    container:
+      type: string
+      title: container
+      description: "Container"
+      enum: ['default', 'container']
+    margin:
+      type: string
+      title: margin
+      description: "Margin"
+      enum: ['default','mt-1 mb-1','mt-3 mb-3','mt-5 mb-5','mt-1','mt-2','mt-3','mt-5','mb-1','mb-2','mb-3','mb-5']
+    padding:
+      type: string
+      title: padding
+      description: "Padding"
+      enum: ['default','pt-1 pb-1','pt-3 pb-3','pt-5 pb-5','pt-1','pt-2','pt-3','pt-5','pb-1','pb-2','pb-3','pb-5']
+    width:
+      type: string
+      title: width
+      description: "Width"
+      enum: ['default', 'col-lg-9 col-12','col-lg-6 col-12','col-lg-3 col-12','col-lg-4 col-12']
+    hide_header:
+      title: "Hide Header"
+      description: "Hide Hero and Page title"
+      type: boolean
+    justify:
+      type: string
+      title: justify
+      description: "Justify Content Vertically"
+      enum: ['default', 'justify-content-lg-start','justify-content-lg-center','justify-content-lg-end','justify-content-between','justify-content-around','justify-content-evenly']
+    include_mute_button:
+      title: "Include Mute Button?"
+      description: "Show a mute button on the hero. Include if using a video with audio."
+      type: boolean
+    include_pause_button:
+      title: "Include Pause Button?"
+      description: "Show a pause button on the hero. Include if using a video."
+      type: boolean
+    overlay:
+      type: string
+      title: "Overlay"
+      description: "Pick an overlay background level"
+      enum: ['default','bg-primary bg-gradient text-white','bg-secondary bg-gradient text-white','bg-dark bg-gradient text-white','bg-black bg-gradient text-white','bg-light bg-gradient text-dark']
+    overlay_opacity:
+      type: string
+      title: "Overlay Opacity"
+      description: "Choose your opacity"
+      enum: ['default','bg-opacity-10','bg-opacity-25','bg-opacity-50','bg-opacity-75']

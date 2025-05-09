@@ -1,0 +1,6 @@
+<div class="stat_paragraph animated {% if count_down %}count-down{% else %}count-up{% endif %}">
+    <div class="stat">
+        <div class="stat_prefix">{{ prefix }}</div><div class="stat_number" value="{{ number|render|striptags }}">{% if count_down %}{{ number|render|striptags }}{% else %}0{% endif %}</div>{% if suffix %}<div class="stat_suffix">{{ suffix }}</div>{% endif %}
+    </div>
+    <div class="stat_description">{{ description}}</div>
+</div>
