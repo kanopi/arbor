@@ -1,3 +1,3 @@
 arbor.settings:
-  type: arbor.settings
+  type: ui_suite_bootstrap.settings
   label: 'Arbor settings'

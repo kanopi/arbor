@@ -1,6 +1,6 @@
 name: 'Arbor'
 type: theme
-description: 'Subtheme based on UI Suite Bootstrap that works with the Saplings'
+description: 'Arbor theme.'
 core_version_requirement: ^10.2 || ^11
 base theme: ui_suite_bootstrap
 hidden: false
@@ -12,14 +12,19 @@ regions:
   highlighted: 'Highlighted'
   help: 'Help'
   content: 'Content'
+  hero: "Hero"
+  pre_content: "Pre Content"
   sidebar_first: 'Primary'
   sidebar_second: 'Secondary'
-  footer: 'Footer'
+  footer_branding: 'Footer Branding'
+  footer_menu: "Footer Menu"
+  footer_legal: "Footer Legal"
+  footer_social: "Footer Social"
   page_top: 'Page top'
   page_bottom: 'Page bottom'
 
 ckeditor5-stylesheets:
-  - assets/css/ckeditor5.css
+  - dist/css/ckeditor5.css
 
 libraries-override:
   ui_suite_bootstrap/bootstrap:
@@ -34,3 +39,8 @@ libraries-extend:
     - arbor/bootstrap
   ui_suite_bootstrap/form:
     - arbor/form
+
+# Information added by Drupal.org packaging script on 2025-04-09
+version: '5.1.0-beta1'
+project: 'ui_suite_bootstrap'
+datestamp: 1744207245

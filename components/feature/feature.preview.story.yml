@@ -1,0 +1,6 @@
+name: Preview
+slots:
+  icon: <img class="img-fluid" src="https://placehold.co/600x400">
+  title: "<h2>I am a title</h2><p>And I am a description</p>"
+  content: "<p>This is the feature content"
+  link: '<a href="https://google.com">This is the link</a>'
