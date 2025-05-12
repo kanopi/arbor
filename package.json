@@ -41,8 +41,6 @@
         "dotenv": "^16.0.3",
         "patch-package": "^8.0.0",
         "postcss-inline-svg": "^5.0.0",
-        "theme": "^0.1.0",
-        "tools": "^0.0.0",
         "youtube-background": "^1.1.8"
     }
 }
