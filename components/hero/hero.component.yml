@@ -4,6 +4,8 @@ group: Hero
 variants:
   default:
     title: Default
+  page_hero: 
+    title: Page Hero
 slots:
   heading:
     title: Heading

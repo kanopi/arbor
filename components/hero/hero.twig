@@ -4,20 +4,19 @@
   set classes = [
     'hero-paragraph',
     margin ? margin,
-    'bg-primary',
     'position-relative',
   ]
 %}
 
 {% set core_classes = [
-    'position-absolute',
-    'w-100',
-    'h-100',
+    'position-relative',
     'top-0',
     'd-flex',
     'flex-column',
     justify ? justify,
     'justify-content-end',
+    overlay_opacity ? overlay_opacity,
+    overlay ? overlay,
 ]
 %}
 
@@ -30,9 +29,7 @@
 
 {% set overlay_classes = [
     'hero-content',
-    'p-lg-5 p-3',
-    overlay_opacity ? overlay_opacity,
-    overlay ? overlay,
+    'container',
 ]
 %}
 {% if hide_header is not defined or hide_header == false %}
@@ -42,19 +39,20 @@
   <div{{ attributes.addClass(classes) }}>
     {% if hero_background %}
       {% if hero_background[0][0]['#media'].bundle.value.0.target_id == 'image' or story == true %}
-        <div class="hero-image w-100 h-100">
-            {{ hero_background }}
+        <div class="hero-image w-100 h-100 d-none d-md-block" style="background-image: url('{{ hero_background[0][0]['#media'].field_media_image.entity.uri.value|image_style('responsive_16_9_2000w') }}')">
         </div>
+        <div class="hero-image-mobile position-relative d-block d-md-none">{{ hero_background }}</div>
       {% elseif hero_background[0][0]['#media'].bundle.value.0.target_id == 'remote_video' %}
-        <div class="hero-image" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ hero_background[0][0]['#media'].field_media_oembed_video.0.value }}"></div>
+        <div class="hero-image d-none d-md-block" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ hero_background[0][0]['#media'].field_media_oembed_video.0.value ~ '&controls=0' }}"></div>
+        <div class="hero-image-mobile video d-block d-md-none position-relative" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ hero_background[0][0]['#media'].field_media_oembed_video.0.value ~ '&controls=0' }}"></div>
       {% else %}
         <div class="hero-image" {% if include_pause_button %}data-vbg-play-button="true"{% endif %} {% if include_mute_button %}data-vbg-mute-button="true"{% endif %} data-vbg="{{ file_url(hero_background[0][0]['#media'].field_media_video_file.entity.uri.value) }}"></div>
       {% endif %}
     {% endif %}
-    <div{{ create_attribute().addClass(core_classes) }}>
+    <div{{ create_attribute().addClass(core_classes|merge(['hero-content-height'])) }}>
       <div{{ create_attribute().addClass(overlay_classes) }}>
       {% if heading %}
-        <h1>{{ heading }}</h1>
+        {% if variant and variant == 'page_hero' %}<h1>{% endif %}{{ heading }}{% if variant and variant == 'page_hero' %}</h1>{% endif %}
       {% endif %}
       {% if date %}
       {{ date }}
@@ -65,23 +63,26 @@
       {{ author }}
       {% endif %}
         {{ content }}
+        <div class="video-background-controls hero-body mt-3">
+        {% if include_pause_button %}
+          <button class="play-toggle" role="switch" aria-checked="false" aria-label="Toggle Play/Pause"><i class="fa fa-pause-circle"></i></button>
+        {% endif %}
+        {% if include_mute_button %}
+          <button class="mute-toggle muted" role="switch" aria-checked="false" aria-label="Toggle Mute/Unmute"><i class="fa fa-volume-mute"></i></button>
+        {% endif %}
+        </div>
       </div>
     </div>
   </div>
- {% else %}
-{% if heading %}
-<div class="container">
-        <h1>{{ heading }}</h1>
-        {% if date %}
-      {{ date }}
-      {% endif %}
-      {% if author and author_url %}
-      <a href="{{ author_url }}"{{ author }}</a>
-      {% elseif author %}
-      {{ author }}
-      {% endif %}
-        </div>
-      {% endif %}
+  {% else %}
+    <div class="basic-hero pt-5 pb-5">
+    {% if heading %}
+      <div class="container d-lg-flex flex-md-row flex-column gap-3">
+        {% if variant and variant == 'page_hero' %}<h1>{% endif %}{{ heading }}{% if variant and variant == 'page_hero' %}</h1>{% endif %}
+        <div class="basic-hero-content">{{ content }}</div>
+      </div>
+    {% endif %}
+    </div>
   {% endif %}
 </div>
 {% endif %}
