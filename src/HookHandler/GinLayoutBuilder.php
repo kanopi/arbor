@@ -64,8 +64,8 @@ class GinLayoutBuilder implements ContainerInjectionInterface {
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container): static {
-    return new static(
+  public static function create(ContainerInterface $container): self {
+    return new self(
       $container->get('module_handler'),
       $container->get('theme_handler')
     );
