@@ -42,8 +42,3 @@ libraries-extend:
     - arbor/bootstrap
   ui_suite_bootstrap/form:
     - arbor/form
-
-# Information added by Drupal.org packaging script on 2025-04-09
-version: '5.1.0-beta1'
-project: 'ui_suite_bootstrap'
-datestamp: 1744207245
