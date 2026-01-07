@@ -5,6 +5,9 @@ core_version_requirement: ^10.2 || ^11
 base theme: ui_suite_bootstrap
 hidden: false
 
+dependencies:
+  gin_lb:gin_lb
+
 regions:
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
