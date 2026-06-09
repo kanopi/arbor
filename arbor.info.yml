@@ -6,7 +6,7 @@ base theme: ui_suite_bootstrap
 hidden: false
 
 dependencies:
-  gin_lb:gin_lb
+  - gin_lb:gin_lb
 
 regions:
   navigation: 'Navigation'
